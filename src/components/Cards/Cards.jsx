@@ -21,7 +21,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                             <CountUp
                                 start={0}
                                 end={confirmed.value}
-                                duration={2.5}
+                                duration={2}
                                 separator=","
                             />
                         </Typography>
@@ -39,7 +39,14 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                         <Typography color="textSecondary" gutterBottom>
                             Recovered
                         </Typography>
-                        <Typography variant="h5">{recovered.value}</Typography>
+                        <Typography variant="h5">
+                            <CountUp
+                                start={0}
+                                end={recovered.value}
+                                duration={2}
+                                separator=","
+                            />
+                        </Typography>
                         <Typography color="textSecondary">
                             {new Date(lastUpdate).toDateString()}
                         </Typography>
@@ -54,7 +61,14 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                         <Typography color="textSecondary" gutterBottom>
                             Deaths
                         </Typography>
-                        <Typography variant="h5">{deaths.value}</Typography>
+                        <Typography variant="h5">
+                            <CountUp
+                                start={0}
+                                end={deaths.value}
+                                duration={2}
+                                separator=","
+                            />
+                        </Typography>
                         <Typography color="textSecondary">
                             {new Date(lastUpdate).toDateString()}
                         </Typography>
